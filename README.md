@@ -1,13 +1,13 @@
 The C program will be passed a series of numbers on the command line and will then create four separate child worker processes. One process will determine the average of the numbers, the second will determine the maximum value, the third will determine the minimum value, and the fourth will determine the median value.
 
-1. The program input 90 81 78 95 79 72 85
-2. The program will output
-    The average value is 82
-    The minimum value is 72
-    The maximum value is 95
-    The medium value is 81
-3. The variables representing the average, minimum, maximum, and medium values are stored globally. The child processes will compute and set these values, and the parent process will output the values once the child processes have exited.
-4. Same has been implemented in Java too, it’s a multi-threaded program using Java threads. One challenge is Java does not have the notion of a global variable due to its object-oriented design.
+1. The program input: 90 81 78 95 79 72 85
+2. The program will output:
+   a. The average value is 82
+   b. The minimum value is 72
+   c. The maximum value is 95
+   d. The medium value is 81
+4. The variables representing the average, minimum, maximum, and medium values are stored globally. The child processes will compute and set these values, and the parent process will output the values once the child processes have exited.
+5. Same has been implemented in Java too, it’s a multi-threaded program using Java threads. One challenge is Java does not have the notion of a global variable due to its object-oriented design.
 
 Steps to compile and run:
 
