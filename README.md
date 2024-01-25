@@ -18,8 +18,8 @@ Steps to compile and run:
    Type the mentioned command to compile the program " javac multi_thread.java "
    A class file is generated in same path once program is compiled successfully
    Type the mentioned command to run the program " java multi_thread "
-\
-5. Compiling C program
+4. Compiling C program
+   
    Type the mentioned command to compile the program " gcc -o multi_process multi_process.c "
    An executable file is generated in same path once program is compiled successfully
    Type the mentioned comman to run the program " ./multi_process "
