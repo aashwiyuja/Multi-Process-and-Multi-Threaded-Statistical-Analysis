@@ -1,25 +1,46 @@
-The C program will be passed a series of numbers on the command line and will then create four separate child worker processes. One process will determine the average of the numbers, the second will determine the maximum value, the third will determine the minimum value, and the fourth will determine the median value.
+# Multi-Process and Multi-Threaded Statistical Analysis
 
-1. The program input: 90 81 78 95 79 72 85
-2. The program will output:
-   a. The average value is 82
-   b. The minimum value is 72
-   c. The maximum value is 95
-   d. The medium value is 81
-4. The variables representing the average, minimum, maximum, and medium values are stored globally. The child processes will compute and set these values, and the parent process will output the values once the child processes have exited.
-5. Same has been implemented in Java too, it’s a multi-threaded program using Java threads. One challenge is Java does not have the notion of a global variable due to its object-oriented design.
+This repository contains two Java and C codes that demonstrate the computation of various statistical measures concurrently using multi-process and multi-threading approaches. The programs aim to calculate the average, minimum, maximum, and median values of a given set of numbers.
 
-Steps to compile and run:
+## Multi-Process Statistical Analysis (C Code)
 
-1. Download & Unzip the folder in your machine
-2. Open command prompt & navigate to the unzipped folder
-3. Compiling Java program
+### Code Structure
 
-   Type the mentioned command to compile the program " javac multi_thread.java "
-   A class file is generated in same path once program is compiled successfully
-   Type the mentioned command to run the program " java multi_thread "
-4. Compiling C program
-   
-   Type the mentioned command to compile the program " gcc -o multi_process multi_process.c "
-   An executable file is generated in same path once program is compiled successfully
-   Type the mentioned comman to run the program " ./multi_process "
+- **Main Process:**
+  - Accepts user input for the total number of input values and the values themselves.
+  - Spawns four child processes, each responsible for a specific statistical measure: minimum, maximum, average, and median.
+  - Uses inter-process communication through pipes to collect the results.
+  - Prints the calculated statistical measures.
+
+### Usage
+
+1. Compile and execute the C code.
+2. Enter the total number of input values.
+3. Input the desired numbers.
+
+## Multi-Threaded Statistical Analysis (Java Code)
+
+### Code Structure
+
+- **Thread Classes:**
+  1. `AverageThread`: Calculates the average value of the array.
+  2. `MinimumThread`: Finds the minimum value in the array.
+  3. `MaximumThread`: Finds the maximum value in the array.
+  4. `MediumThread`: Computes the median value of the array.
+
+- **Main Class (`multi_thread`):**
+  - Prompts the user to enter the total number of input values and the input values.
+  - Creates instances of the four thread classes.
+  - Starts all threads concurrently.
+  - Uses the `join` method to ensure that the main thread waits for all threads to complete.
+  - Prints the calculated average, minimum, maximum, and median values.
+
+### Usage
+
+1. Compile and execute the Java code.
+2. Enter the total number of input values.
+3. Input the desired numbers.
+
+## Note
+
+Feel free to explore and experiment with different input values to observe how multi-process and multi-threading enhance the efficiency of statistical calculations. These examples showcase the parallelization of computations to improve overall performance.
